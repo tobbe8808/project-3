@@ -30,3 +30,62 @@ def printGameBoard():  # makes the gameboard
 
 def modifyArray(num, turn):  # modifies gameboard
     board[(num-1)//3][(num-1) % 3] = turn
+
+
+def checkForWinner(board):  # checking possible winner
+    # X axis
+    if board[0][0] == "X" and board[0][1] == "X" and board[0][2] == "X":
+        print(player, "winner")
+        return "X"
+    elif board[0][0] == "O" and board[0][1] == "O" and board[0][2] == "O":
+        print("O has won!")
+        return "O"
+    elif board[1][0] == "X" and board[1][1] == "X" and board[1][2] == "X":
+        print(player, "winner")
+        return "X"
+    elif board[1][0] == "O" and board[1][1] == "O" and board[1][2] == "O":
+        print("O has won!")
+        return "O"
+    elif board[2][0] == "X" and board[2][1] == "X" and board[2][2] == "X":
+        print(player, "winner")
+        return "X"
+    elif board[2][0] == "O" and board[2][1] == "O" and board[2][2] == "O":
+        print("O has won!")
+        return "O"
+    # Y axis
+    if board[0][0] == "X" and board[1][0] == "X" and board[2][0] == "X":
+        print(player, "winner")
+        return "X"
+    elif board[0][0] == "O" and board[1][0] == "O" and board[2][0] == "O":
+        print("O has won!")
+        return "O"
+    elif board[0][1] == "X" and board[1][1] == "X" and board[2][1] == "X":
+        print(player, "winner")
+        return "X"
+    elif board[0][1] == "O" and board[1][1] == "O" and board[2][1] == "O":
+        print("O has won!")
+        return "O"
+    elif board[0][2] == "X" and board[1][2] == "X" and board[2][2] == "X":
+        print(player, "winner")
+        return "X"
+    elif board[0][2] == "O" and board[1][2] == "O" and board[2][2] == "O":
+        print("O has won!")
+        return "O"
+    # Cross wins
+    elif board[0][0] == "X" and board[1][1] == "X" and board[2][2] == "X":
+        print(player, "winner")
+        return "X"
+    elif board[0][0] == "O" and board[1][1] == "O" and board[2][2] == "O":
+        print("O has won!")
+        return "O"
+    elif board[0][2] == "X" and board[1][1] == "X" and board[2][0] == "X":
+        print(player, "winner")
+        return "X"
+    elif board[0][2] == "O" and board[1][1] == "O" and board[2][0] == "O":
+        print("O has won!")
+        return "O"
+    else:
+        return "N"
+
+leaveLoop = False
+turnCounter = 0
