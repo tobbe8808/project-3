@@ -115,3 +115,21 @@ while not leaveLoop:
                 break
 
     turnCounter += 1
+
+    winner = checkForWinner(board)  # checking if game ended with win or tie
+    if winner != "N" or not possibleNumbers:
+        print("Game over!")
+        if not possibleNumbers:
+            print("Tie")
+        while True:
+            ans = input("Play again? (y/n): ")
+            if ans.lower() not in ("y", "n"):
+                print('Please answer with "y" or "n".')
+            else:
+                break
+        if ans == "n":
+            leaveLoop = True
+        else:  # Reseting the game
+            possibleNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+            turnCounter = 0
