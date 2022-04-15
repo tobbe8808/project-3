@@ -89,3 +89,10 @@ def checkForWinner(board):  # checking possible winner
 
 leaveLoop = False
 turnCounter = 0
+
+while not leaveLoop:
+    if turnCounter % 2 == 0:  # computers turn
+        cpuChoice = random.choice(possibleNumbers)
+        print("\nComputer's choice: ", cpuChoice)
+        modifyArray(cpuChoice, "O")
+        possibleNumbers.remove(cpuChoice)
