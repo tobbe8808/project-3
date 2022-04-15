@@ -55,6 +55,12 @@ This Tictactoe is a game that you run in the Code institutes mock terminal in He
 
 ![input](./readmepictures/unvalid5.PNG)
 
+## Wanna play again
+
+- Asks the player after a win or a draw if they wanna play again or exit game.
+
+![play](./readmepictures/playagain.PNG)
+
 ## Code tested
 
 - The code is tested for no errors found in the gitpod terminal and on Heroku manually.
