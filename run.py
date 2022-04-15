@@ -96,3 +96,22 @@ while not leaveLoop:
         print("\nComputer's choice: ", cpuChoice)
         modifyArray(cpuChoice, "O")
         possibleNumbers.remove(cpuChoice)
+
+    else:  # Player's turn.
+        printGameBoard()
+        while True:
+            try:
+                numberPicked = int(input("\nChoose a number [1-9]: "))
+            except ValueError:
+                print("That was not a valid number, please try again.")
+                continue
+
+            if numberPicked not in possibleNumbers:
+                print("That board position is invalid, try again.")
+                continue
+            else:
+                modifyArray(numberPicked, "X")
+                possibleNumbers.remove(numberPicked)
+                break
+
+    turnCounter += 1
